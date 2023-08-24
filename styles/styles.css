@@ -1,0 +1,261 @@
+:root {
+  --primary-color: #ffc400;
+  --secondary-color: #283693;
+  --accent-color: #ffffff;
+  --font-text: "Roboto", sans-serif;
+  --font-weight: 700;
+  --xxs-size: 12px;
+  --xs-size: 13px;
+  --s-size: 16px;
+  --m-size: 21px;
+  --l-size: 25px;
+  --xl-size: 27px;
+  --xxl-size: 30px;
+  --xxxl-size: 48px;
+  --max-width: 1024px;
+  --min-width: 360px;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.baner-page {
+  margin: 0;
+  font-family: var(--font-text);
+  font-style: normal;
+  font-weight: var(--font-weight);
+  background-color: var(--secondary-color);
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .baner-page {
+    padding: 0 20px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1920px) {
+  .baner-page {
+    padding: 0 0 0 100px;
+  }
+}
+.baner-page .container {
+  height: 90%;
+}
+.baner-page .container_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.baner-page .container_wrapper_animated-image {
+  width: 130px;
+  height: 80px;
+  background: url("../assets/shoes.png") center/cover, url("../assets/yellowBcg.png") center/cover, url("../assets/dottedFrame.png");
+  background-repeat: no-repeat;
+  position: absolute;
+  animation: moveImage 4s ease-in-out infinite 4s;
+  z-index: 2;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .baner-page .container_wrapper_animated-image {
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 60px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .baner-page .container_wrapper_animated-image {
+    width: 130px;
+    height: 80px;
+    left: 10px;
+  }
+}
+@keyframes moveImage {
+  0% {
+    transform: translateY(100%);
+  }
+  25%, 50%, 75% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+.baner-page .container_wrapper_waves {
+  position: relative;
+  left: 90px;
+  width: 109px;
+  height: 36px;
+  background-image: url("../assets/waves.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .baner-page .container_wrapper_waves {
+    width: 88px;
+    height: 29px;
+    left: 15px;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 1920px) {
+  .baner-page .container_wrapper_waves {
+    top: 20px;
+    left: 50px;
+  }
+}
+.baner-page .container_wrapper_plus {
+  position: relative;
+  bottom: 20px;
+  width: 28px;
+  height: 28px;
+  background-image: url("../assets/plus.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  left: 35px;
+  animation: shake 1s infinite;
+}
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .baner-page .container_wrapper_plus {
+    width: 12px;
+    height: 12px;
+    left: 5px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .baner-page .container_wrapper_plus {
+    width: 28px;
+    height: 28px;
+  }
+}
+.baner-page .container_wrapper_text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.baner-page .container_wrapper_text-container_text_title {
+  margin: 0;
+  font-size: var(--xxxl-size);
+  letter-spacing: 0px;
+  line-height: 1.6;
+  color: var(--primary-color);
+  font-style: italic;
+  animation: changeText 4s ease-in-out infinite 4s;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .baner-page .container_wrapper_text-container_text_title {
+    font-size: var(--xl-size);
+    letter-spacing: 0px;
+    line-height: 1.6;
+  }
+}
+.baner-page .container_wrapper_text-container_text_subtitle {
+  margin: 0;
+  text-align: center;
+  margin-top: -20px;
+  font-size: var(--m-size);
+  letter-spacing: 0px;
+  line-height: 1.5;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  animation: changeText 4s ease-in-out infinite 4s;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .baner-page .container_wrapper_text-container_text_subtitle {
+    margin-top: 0;
+    font-size: var(--xxs-size);
+    letter-spacing: 0px;
+    line-height: 1.5;
+  }
+}
+@keyframes changeText {
+  0% {
+    transform: translateY(-100%);
+  }
+  25%, 50%, 75% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+.baner-page .container_wrapper_dot {
+  position: relative;
+}
+.baner-page .container_wrapper_dot::after {
+  content: "";
+  position: absolute;
+  width: 27px;
+  height: 27px;
+  background-color: var(--primary-color);
+  border-radius: 13px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 27px;
+  left: 50%;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .baner-page .container_wrapper_dot::after {
+    width: 21px;
+    height: 21px;
+    border-radius: 11px;
+  }
+}
+.baner-page .container_wrapper_btn {
+  width: 158px;
+  height: 37px;
+  border-radius: 18px;
+  background-color: var(--accent-color);
+  border: none;
+  font-size: var(--l-size);
+  letter-spacing: 1px;
+  color: var(--secondary-color);
+  text-align: center;
+  text-transform: uppercase;
+  animation: heartBeat;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .baner-page .container_wrapper_btn {
+    font-size: var(--s-size);
+    letter-spacing: 0px;
+    line-height: 1;
+    width: 66px;
+    height: 41px;
+    border-radius: 11px;
+  }
+}
+.baner-page .container_wrapper_dots {
+  position: relative;
+  width: 37px;
+  height: 35px;
+  background-image: url("../assets/dotted.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .baner-page .container_wrapper_dots {
+    top: -30px;
+    left: 15px;
+  }
+}/*# sourceMappingURL=styles.css.map */
